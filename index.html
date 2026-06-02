@@ -222,9 +222,7 @@ transform:translateY(110vh);
 <div id="pinPage">
 
 <div class="trex-wrapper">
-<img
-src="https://pic.funnygifsbox.com/uploads/2020/06/funnygifsbox.com-2020-06-19-08-13-29-16.gif"
-class="trex-gif">
+<img src="https://pic.funnygifsbox.com/uploads/2020/06/funnygifsbox.com-2020-06-19-08-13-29-16.gif" class="trex-gif">
 </div>
 
 <h2 class="title">
@@ -265,7 +263,7 @@ clue : your birthday
 
 </div>
 
-<!-- PAGE HI -->
+<!-- HI PAGE -->
 
 <div id="hiPage" class="hidden">
 
@@ -277,9 +275,7 @@ clue : your birthday
 hi, how are you 👋🏻
 </h1>
 
-<button
-class="tap-btn"
-onclick="openGuess()">
+<button class="tap-btn" onclick="openGuess()">
 tap disinii
 </button>
 
@@ -287,7 +283,7 @@ tap disinii
 
 </div>
 
-<!-- PAGE GUESS -->
+<!-- GUESS PAGE -->
 
 <div id="guessPage" class="hidden">
 
@@ -299,9 +295,7 @@ tap disinii
 guess who's bday is today :)
 </h1>
 
-<button
-class="tap-btn"
-onclick="openBirthday()">
+<button class="tap-btn" onclick="openBirthday()">
 pencett
 </button>
 
@@ -342,6 +336,15 @@ kebahagiaan dan banyak kejutan menyenangkan.
 const correctPin = "260710";
 
 let inputPin = "";
+
+let wrongAttempts = 0;
+
+const wrongMessages = [
+"APA HAYOOOO",
+"😏",
+"ngetik apa sih cil",
+"Lio bilekk : 😡"
+];
 
 function updateDots(){
 
@@ -386,7 +389,15 @@ hiPage.classList.add("fade-in");
 
 }else{
 
-inputPin="";
+alert(
+wrongMessages[
+wrongAttempts % wrongMessages.length
+]
+);
+
+wrongAttempts++;
+
+inputPin = "";
 updateDots();
 
 }
